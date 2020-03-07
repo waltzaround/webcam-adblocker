@@ -254,7 +254,5 @@ function playVideo() {
  function onPlayerStateChange(event) {
 
 
-   if (event.data == YT.PlayerState.PLAYING ) {
-     
-   }
+
  }
