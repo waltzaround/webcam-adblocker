@@ -114,7 +114,7 @@ function processVideo () {
     if (faceVect.size() < 1) {
       lookingAtScreen = false
       console.log('NO HOOMAN!')
-      myElement.style.display = "initial";
+      myElement.style.display = "grid";
       player.pauseVideo();
       audiotag.play();
     }
