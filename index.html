@@ -1,6 +1,49 @@
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
+<style>
+  html {
+    font-family: Barlow, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  }
+  body {
+    margin: 0;
+  }
+
+
+  .Blocker {
+   
+    position: absolute;
+    background-color: red;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+  align-items: center;
+  display: none;
+  }
+
+  .BlockerText {
+
+    display: grid;
+    margin: 0 auto;
+    margin-top: calc( 50vh - 8rem);
+    color: white;
+    font-size: 2rem;
+    background-color: darkred;
+    padding: 4rem;
+    height: 4rem;
+    width: 20rem;
+    text-align: center;
+    border: 4px solid white;
+    border-radius: 8px;
+
+  }
+</style>
 <body>
+  <div class="Blocker">
+    <h1 class="BlockerText">Resume Viewing</h1>
+  </div>
   <h1>Proof of concept attention check</h1>
   <p>Please make sure your adblock is off and webcam access is enabled. Turn your speakers up and play the video when you are ready.  <a href='https://github.com/waltzaround/web-video-tracker'>Repo on Github</a></p>
  

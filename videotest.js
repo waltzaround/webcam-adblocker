@@ -1,7 +1,10 @@
+let myElement = document.querySelector(".Blocker");
+
+
+
 let lookingAtScreen = false
 let audiotag = document.getElementById("audiotag1")
 let videoWidth, videoHeight
-
 
 // whether streaming video from the camera.
 let streaming = false
@@ -111,6 +114,7 @@ function processVideo () {
     if (faceVect.size() < 1) {
       lookingAtScreen = false
       console.log('NO HOOMAN!')
+      myElement.style.display = "initial";
       player.pauseVideo();
       audiotag.play();
     }
@@ -121,6 +125,7 @@ function processVideo () {
       console.log('ITS WORKING!')
       player.playVideo();
       audiotag.pause();
+      myElement.style.display = "none";
       faces.push(new cv.Rect(face.x, face.y, face.width, face.height))
       if (detectEye.checked) {
         let eyeVect = new cv.RectVector()
