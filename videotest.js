@@ -111,6 +111,7 @@ function processVideo () {
     if (faceVect.size() < 1) {
       lookingAtScreen = false
       console.log('NO HOOMAN!')
+      player.pauseVideo();
       audiotag.play();
     }
 
@@ -118,6 +119,8 @@ function processVideo () {
       let face = faceVect.get(i)
       lookingAtScreen = true
       console.log('ITS WORKING!')
+      player.playVideo();
+      audiotag.pause();
       faces.push(new cv.Rect(face.x, face.y, face.width, face.height))
       if (detectEye.checked) {
         let eyeVect = new cv.RectVector()
@@ -204,3 +207,54 @@ function opencvIsReady () {
   initUI()
   startCamera()
 }
+
+
+ // 2. This code loads the IFrame Player API code asynchronously.
+ var tag = document.createElement('script');
+
+ tag.src = "https://www.youtube.com/iframe_api";
+ var firstScriptTag = document.getElementsByTagName('script')[0];
+ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+ // 3. This function creates an <iframe> (and YouTube player)
+ //    after the API code downloads.
+ var player;
+ function onYouTubeIframeAPIReady() {
+   player = new YT.Player('player', {
+     height: '768',
+     width: '1280',
+     videoId: 'cVEemOmHw9Y',
+     events: {
+       'onReady': onPlayerReady,
+       'onStateChange': onPlayerStateChange
+     }
+   });
+ }
+
+ // 4. The API will call this function when the video player is ready.
+ function onPlayerReady(event) {
+   event.target.playVideo();
+ }
+
+
+
+ // 5. The API calls this function when the player's state changes.
+ //    The function indicates that when playing a video (state=1),
+ //    the player should play for six seconds and then stop.
+
+ function stopVideo() {
+
+}
+function playVideo() {
+ player.playVideo();
+}
+
+
+
+ function onPlayerStateChange(event) {
+
+
+   if (event.data == YT.PlayerState.PLAYING ) {
+     
+   }
+ }
