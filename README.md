@@ -1,5 +1,5 @@
 # web-video-tracker
-building on existing work to make video attention watching work 
+Proof of concent adblock detection that relies on a webcam to check if you are covering your face or jot looking when an advertisement is playing
 
 ## Demo: https://waltzaround.github.io/web-video-tracker/
 
