@@ -1,5 +1,5 @@
 # web-video-tracker
-Proof of concent adblock detection that relies on a webcam to check if you are covering your face or jot looking when an advertisement is playing
+Proof of concept adblock detection that relies on a webcam to check if you are covering your face or jot looking when an advertisement is playing
 
 ## Demo: https://waltzaround.github.io/web-video-tracker/
 
