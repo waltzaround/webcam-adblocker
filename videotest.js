@@ -226,9 +226,9 @@ function opencvIsReady () {
  var player;
  function onYouTubeIframeAPIReady() {
    player = new YT.Player('player', {
-     height: '768',
-     width: '1280',
-     videoId: 'cVEemOmHw9Y',
+     height: screen.height,
+     width: screen.width,
+     videoId: 'nyp_PczrqFE',
      events: {
        'onReady': onPlayerReady,
        'onStateChange': onPlayerStateChange
