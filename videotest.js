@@ -114,7 +114,7 @@ function processVideo () {
     faceClassifier.detectMultiScale(faceMat, faceVect)
     if (faceVect.size() < 1) {
       lookingAtScreen = false
-      console.log('NO HOOMAN!')
+      console.log('No audience detected!')
       myElement.style.display = "grid";
       player.pauseVideo();
       audiotag.play();
@@ -123,7 +123,7 @@ function processVideo () {
     for (let i = 0; i < faceVect.size(); i++) {
       let face = faceVect.get(i)
       lookingAtScreen = true
-      console.log('ITS WORKING!')
+      console.log('Human is watching')
       player.playVideo();
       audiotag.pause();
       myElement.style.display = "none";
@@ -210,8 +210,10 @@ function initUI () {
 
 function opencvIsReady () {
   console.log('OpenCV.js is ready')
+  window.onload = function(){
   initUI()
   startCamera()
+  };
 }
 
 
@@ -227,8 +229,8 @@ function opencvIsReady () {
  var player;
  function onYouTubeIframeAPIReady() {
    player = new YT.Player('player', {
-     height: '768',
-     width: '1280',
+     height: screen.height,
+     width: screen.width,
      videoId: 'nyp_PczrqFE',
      events: {
        'onReady': onPlayerReady,
@@ -240,7 +242,7 @@ function opencvIsReady () {
  // 4. The API will call this function when the video player is ready.
  function onPlayerReady(event) {
 
- 
+  player.setVolume('30');
    event.target.playVideo();
 
  }
