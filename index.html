@@ -8,6 +8,7 @@
   }
   body {
     margin: 0;
+    text-align: center;
   }
   h1 {
     margin: 0;
@@ -46,6 +47,15 @@
     border: 4px solid white;
     border-radius: 8px;
 
+    justify-content: center;
+  align-items: center;
+
+  }
+
+  .player {
+    display: flex;
+   justify-content: center;
+    width: 100vw;
   }
 </style>
 <body>
@@ -54,10 +64,11 @@
   </div>
   <div class="explainer">
   <h1>Anti-Adblock Proof of concept</h1>
-  <p>Only works on desktop computers. Please make sure any adblockers or script blockers are off and webcam access is enabled. Turn your speakers up and play the video when you are ready.  <a href='https://github.com/waltzaround/web-video-tracker'>Repo on Github</a></p>
+  <p>Only works on desktop computers. Please make sure any adblockers or script blockers are off and webcam access is enabled. <br/>Turn your speakers up and play the video when you are ready.  <a href='https://github.com/waltzaround/web-video-tracker'>Repo on Github</a></p>
 </div>
+<div class="player"> 
   <div id="player"></div>
- 
+</div>
   <div id="container" hidden>
     <canvas class="center-block" id="canvasOutput" width=320 height=240></canvas>
   </div>
