@@ -1,4 +1,5 @@
 let myElement = document.querySelector(".Blocker");
+let myText = document.querySelector(".BlockerText");
 
 
 
@@ -116,9 +117,14 @@ function processVideo () {
       lookingAtScreen = false
       console.log('No audience detected!')
       myElement.style.display = "grid";
+
+      myText.textContent = "RESUME VIEWING"
       player.pauseVideo();
       audiotag.play();
     }
+    
+  
+
 
     for (let i = 0; i < faceVect.size(); i++) {
       let face = faceVect.get(i)
@@ -127,6 +133,15 @@ function processVideo () {
       player.playVideo();
       audiotag.pause();
       myElement.style.display = "none";
+      // !!! Uncomment to enable anti shoulder-surfer !!!
+      //   if (faceVect.size() > 1) {
+      //   lookingAtScreen = false
+      //   console.log('Spy audience detected!')
+      //   myElement.style.display = "grid";
+      //   myText.textContent = "SHOULDER SURFER DETECTED"
+      //   player.pauseVideo();
+      //   audiotag.play();
+      // }
       faces.push(new cv.Rect(face.x, face.y, face.width, face.height))
       if (detectEye.checked) {
         let eyeVect = new cv.RectVector()
@@ -231,7 +246,7 @@ function opencvIsReady () {
    player = new YT.Player('player', {
      height: screen.height,
      width: screen.width,
-     videoId: 'Hlz9JFIxqms',
+     videoId: '8UCV2qmryuU',
      events: {
        'onReady': onPlayerReady,
        'onStateChange': onPlayerStateChange
