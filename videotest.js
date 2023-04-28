@@ -220,7 +220,6 @@ function stopCamera () {
 function opencvIsReady () {
   console.log('OpenCV.js is ready')
   window.onload = function(){
-  initUI()
   startCamera()
   };
 }
