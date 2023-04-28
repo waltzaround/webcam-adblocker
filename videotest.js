@@ -93,7 +93,7 @@ function startVideoProcessing () {
 }
 
 function processVideo () {
-  stats.begin()
+
   canvasInputCtx.drawImage(video, 0, 0, videoWidth, videoHeight)
   let imageData = canvasInputCtx.getImageData(0, 0, videoWidth, videoHeight)
   srcMat.data.set(imageData.data)
@@ -177,7 +177,6 @@ function processVideo () {
   canvasOutputCtx.drawImage(canvasInput, 0, 0, videoWidth, videoHeight)
   drawResults(canvasOutputCtx, faces, 'red', size)
   drawResults(canvasOutputCtx, eyes, 'yellow', size)
-  stats.end()
   requestAnimationFrame(processVideo)
 }
 
@@ -217,11 +216,6 @@ function stopCamera () {
   streaming = false
 }
 
-function initUI () {
-  stats = new Stats()
-  stats.showPanel(0)
-  document.getElementById('container').appendChild(stats.dom)
-}
 
 function opencvIsReady () {
   console.log('OpenCV.js is ready')
