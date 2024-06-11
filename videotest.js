@@ -239,7 +239,7 @@ function opencvIsReady () {
    player = new YT.Player('player', {
      height: screen.height,
      width: screen.width,
-     videoId: 'OYecfV3ubP8',
+     videoId: 'LljQaMlXP08',
      events: {
        'onReady': onPlayerReady,
        'onStateChange': onPlayerStateChange
